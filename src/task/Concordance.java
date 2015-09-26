@@ -20,24 +20,14 @@ public class Concordance {
         sentenceIndexes.add(sentenceIndex);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder();
+    public List<ConcordanceEntry> getEntries() {
+        List<ConcordanceEntry> concordanceEntries = new ArrayList<>();
 
         for (Map.Entry<String, List<Integer>> entry : this.words.entrySet()) {
-            result.append(entryToString(entry));
-            result.append("\n");
+            ConcordanceEntry concordanceEntry = new ConcordanceEntry(entry.getKey(), entry.getValue());
+            concordanceEntries.add(concordanceEntry);
         }
 
-        return result.toString();
-    }
-
-    private static String entryToString(Map.Entry<String, List<Integer>> entry) {
-        StringBuilder result = new StringBuilder();
-        result.append(String.format("%s {%d:", entry.getKey(), entry.getValue().size()));
-        result.append(Utils.join(entry.getValue(), ","));
-        result.append("}");
-
-        return result.toString();
+        return concordanceEntries;
     }
 }

@@ -2,7 +2,7 @@ package task;
 
 public abstract class TextElement {
 
-    private String text;
+    private final String text;
 
     public TextElement(String text) {
         this.text = text;

@@ -15,7 +15,8 @@ public class Main {
 
             ConcordanceCalculator calculator = new ConcordanceCalculator(text);
             Concordance concordance = calculator.calculate();
-            System.out.println(concordance);
+            ConcordancePresenter presenter = new ConcordancePresenter(concordance);
+            System.out.println(presenter);
         }
         catch (IOException e) {
             System.out.println("Error occurred: " + e.getMessage());

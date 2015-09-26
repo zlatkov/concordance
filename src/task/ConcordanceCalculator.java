@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ConcordanceCalculator {
 
-    private Paragraph paragraph;
+    private final Paragraph paragraph;
 
     public ConcordanceCalculator(String text) {
         this.paragraph = new Paragraph(text);

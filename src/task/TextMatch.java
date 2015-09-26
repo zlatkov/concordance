@@ -2,8 +2,8 @@ package task;
 
 public class TextMatch {
 
-    private int start;
-    private int end;
+    private final int start;
+    private final int end;
 
     public TextMatch(int start, int end) {
         this.start = start;
