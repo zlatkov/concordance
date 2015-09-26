@@ -7,17 +7,17 @@ public class Concordance {
     private final Map<String, List<Integer>> words = new TreeMap<>();
 
     public void addWord(String word, int sentenceIndex) {
-        List<Integer> sentenceIndexes;
+        List<Integer> sentenceIndices;
 
         if (!this.words.containsKey(word)) {
-            sentenceIndexes = new ArrayList<>();
-            this.words.put(word, sentenceIndexes);
+            sentenceIndices = new ArrayList<>();
+            this.words.put(word, sentenceIndices);
         }
         else {
-            sentenceIndexes = this.words.get(word);
+            sentenceIndices = this.words.get(word);
         }
 
-        sentenceIndexes.add(sentenceIndex);
+        sentenceIndices.add(sentenceIndex);
     }
 
     public List<ConcordanceEntry> getEntries() {
