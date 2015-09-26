@@ -19,13 +19,14 @@ public class Sentence extends TextElement {
         for (String part : textParts) {
             String word = removeInvalidBoundaryCharacters(part);
 
-            if (word.length() > 0) {
-                if (isAbbreviation(word)) {
-                    words.add(word.toLowerCase());
-                }
-                else {
-                    String validWord = removeTrailingDot(word);
-                    words.add(validWord.toLowerCase());
+            if (isAbbreviation(word)) {
+                words.add(word.toLowerCase());
+            }
+            else {
+                String wordWithoutDot = removeTrailingDot(word);
+
+                if (isValidWord(wordWithoutDot)) {
+                    words.add(wordWithoutDot.toLowerCase());
                 }
             }
         }
@@ -60,5 +61,9 @@ public class Sentence extends TextElement {
 
     private static boolean isAbbreviation(String word) {
         return word.matches(Patterns.ABBREVIATIONS_PATTERN.pattern());
+    }
+
+    private static boolean isValidWord(String word) {
+        return word.length() > 0;
     }
 }
