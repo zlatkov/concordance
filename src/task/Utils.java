@@ -12,7 +12,7 @@ public final class Utils {
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {
-            TextMatch match = new TextMatch(matcher.start(), matcher.group());
+            TextMatch match = new TextMatch(matcher.start(), matcher.end());
             matches.add(match);
         }
 
@@ -24,11 +24,11 @@ public final class Utils {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < stringCount; i++) {
-            result.append(values.get(i).toString());
-
-            if (i < stringCount - 1) {
+            if (i > 0) {
                 result.append(separator);
             }
+
+            result.append(values.get(i).toString());
         }
 
         return result.toString();

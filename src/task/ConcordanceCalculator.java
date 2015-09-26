@@ -15,12 +15,12 @@ public class ConcordanceCalculator {
         List<Sentence> sentences = this.paragraph.extractSentences();
         int sentencesCount = sentences.size();
 
-        for (int i = 0; i < sentencesCount; i++) {
-            Sentence sentence = sentences.get(i);
+        for (int sentenceIndex = 0; sentenceIndex < sentencesCount; sentenceIndex++) {
+            Sentence sentence = sentences.get(sentenceIndex);
             List<String> words = sentence.extractWords();
 
             for (String word : words) {
-                result.addWord(word, i);
+                result.addWord(word, sentenceIndex);
             }
         }
 

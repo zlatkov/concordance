@@ -20,7 +20,6 @@ public class Paragraph extends TextElement {
                 String sentenceText = this.getText().substring(textPosition, ending.getEnd() + 1);
                 Sentence sentence = new Sentence(sentenceText);
                 sentences.add(sentence);
-
                 textPosition = ending.getEnd() + 1;
             }
         }

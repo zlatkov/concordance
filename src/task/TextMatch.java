@@ -2,15 +2,15 @@ package task;
 
 public class TextMatch {
 
-    private int position;
-    private String text;
+    private int start;
+    private int end;
 
-    public TextMatch(int position, String text) {
-        this.position = position;
-        this.text = text;
+    public TextMatch(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 
-    public int getStart() { return this.position; }
+    public int getStart() { return this.start; }
 
-    public int getEnd() { return this.position + this.text.length() - 1; }
+    public int getEnd() { return this.end; }
 }
