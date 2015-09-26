@@ -6,28 +6,28 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Utils {
-	public static List<TextMatch> findMatches(String text, Pattern pattern) {
-		List<TextMatch> matches = new ArrayList<>();
-		Matcher matcher = pattern.matcher(text);
-		while (matcher.find()) {
-			TextMatch match = new TextMatch(matcher.start(), matcher.group());
-			matches.add(match);
-		}
+    public static List<TextMatch> findMatches(String text, Pattern pattern) {
+        List<TextMatch> matches = new ArrayList<>();
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) {
+            TextMatch match = new TextMatch(matcher.start(), matcher.group());
+            matches.add(match);
+        }
 
-		return matches;
-	}
+        return matches;
+    }
 
-	public static <T> String join(List<T> values, String separator) {
-		int stringCount = values.size();
-		StringBuilder result = new StringBuilder();
+    public static <T> String join(List<T> values, String separator) {
+        int stringCount = values.size();
+        StringBuilder result = new StringBuilder();
 
-		for (int i = 0; i < stringCount; i++) {
-			result.append(values.get(i).toString());
-			if (i < stringCount - 1) {
-				result.append(separator);
-			}
-		}
+        for (int i = 0; i < stringCount; i++) {
+            result.append(values.get(i).toString());
+            if (i < stringCount - 1) {
+                result.append(separator);
+            }
+        }
 
-		return result.toString();
-	}
+        return result.toString();
+    }
 }

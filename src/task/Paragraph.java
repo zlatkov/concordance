@@ -9,9 +9,9 @@ public class Paragraph extends TextElement {
     // Abbreviations are special words such as e.g., i.e., dr.
     private static final Pattern ABBREVIATIONS_PATTERN = Pattern.compile("e\\.g\\.|mr\\.|i\\.e\\.|dr\\.");
 
-	public Paragraph(String text) {
-		super(text);
-	}
+    public Paragraph(String text) {
+        super(text);
+    }
 
     public List<Sentence> extractSentences() {
         List<TextMatch> possibleLineEndings = Utils.findMatches(this.getText(), TERMINATORS_PATTERN);
@@ -32,7 +32,7 @@ public class Paragraph extends TextElement {
         return sentences;
     }
 
-	private static boolean isValidSentenceEnd(TextMatch ending, List<TextMatch> abbreviations) {
+    private static boolean isValidSentenceEnd(TextMatch ending, List<TextMatch> abbreviations) {
         for (TextMatch abbreviation : abbreviations) {
             if (ending.getStart() >= abbreviation.getStart() && ending.getEnd() <= abbreviation.getEnd()) {
                 return false;
@@ -40,5 +40,5 @@ public class Paragraph extends TextElement {
         }
 
         return true;
-	}
+    }
 }
