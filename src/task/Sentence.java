@@ -15,14 +15,18 @@ public class Sentence extends TextElement {
     public List<String> extractWords() {
         String[] textParts = this.getText().split(WORDS_SPLIT);
         List<String> words = new ArrayList<>();
+
         for (String part : textParts) {
             String word = removeInvalidBoundaryCharacters(part);
-            if (isAbbreviation(word)) {
-                words.add(word.toLowerCase());
-            }
-            else {
-                String validWord = removeTrailingDot(word);
-                words.add(validWord.toLowerCase());
+
+            if (word.length() > 0) {
+                if (isAbbreviation(word)) {
+                    words.add(word.toLowerCase());
+                }
+                else {
+                    String validWord = removeTrailingDot(word);
+                    words.add(validWord.toLowerCase());
+                }
             }
         }
 
@@ -36,11 +40,13 @@ public class Sentence extends TextElement {
     private static String removeInvalidBoundaryCharacters(String word) {
         int wordSize = word.length();
         int beginIndex = 0;
+
         while (beginIndex < wordSize && !isValidBoundaryCharacter(word.charAt(beginIndex))) {
             beginIndex++;
         }
 
         int endIndex = wordSize - 1;
+
         while (endIndex > 0 && endIndex > beginIndex && !isValidBoundaryCharacter(word.charAt(endIndex))) {
             endIndex--;
         }

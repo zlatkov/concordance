@@ -14,6 +14,7 @@ public class Paragraph extends TextElement {
 
         int textPosition = 0;
         List<Sentence> sentences = new ArrayList<>();
+
         for (TextMatch ending : possibleLineEndings) {
             if (isValidSentenceEnd(ending, abbreviations)) {
                 String sentenceText = this.getText().substring(textPosition, ending.getEnd() + 1);

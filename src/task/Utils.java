@@ -10,6 +10,7 @@ public final class Utils {
     public static List<TextMatch> findMatches(String text, Pattern pattern) {
         List<TextMatch> matches = new ArrayList<>();
         Matcher matcher = pattern.matcher(text);
+
         while (matcher.find()) {
             TextMatch match = new TextMatch(matcher.start(), matcher.group());
             matches.add(match);
@@ -24,6 +25,7 @@ public final class Utils {
 
         for (int i = 0; i < stringCount; i++) {
             result.append(values.get(i).toString());
+
             if (i < stringCount - 1) {
                 result.append(separator);
             }

@@ -8,6 +8,7 @@ public class Concordance {
 
     public void addWord(String word, int sentenceIndex) {
         List<Integer> sentenceIndexes;
+
         if (!this.words.containsKey(word)) {
             sentenceIndexes = new ArrayList<>();
             this.words.put(word, sentenceIndexes);
@@ -22,6 +23,7 @@ public class Concordance {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
+
         for (Map.Entry<String, List<Integer>> entry : this.words.entrySet()) {
             result.append(entryToString(entry));
             result.append("\n");
