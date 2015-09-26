@@ -23,7 +23,7 @@ public class Sentence extends TextElement {
                 words.add(word.toLowerCase());
             }
             else {
-                String wordWithoutDot = removeTrailingDot(word);
+                String wordWithoutDot = removeTrailingDots(word);
 
                 if (isValidWord(wordWithoutDot)) {
                     words.add(wordWithoutDot.toLowerCase());
@@ -34,8 +34,8 @@ public class Sentence extends TextElement {
         return words;
     }
 
-    private static String removeTrailingDot(String word) {
-        return word.replaceAll("\\.$", "");
+    private static String removeTrailingDots(String word) {
+        return word.replaceAll("\\.+$", "");
     }
 
     private static String removeInvalidBoundaryCharacters(String word) {
