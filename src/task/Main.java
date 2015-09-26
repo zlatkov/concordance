@@ -16,6 +16,6 @@ public class Main {
 
         ConcordanceCalculator calculator = new ConcordanceCalculator(text);
         Concordance concordance = calculator.calculate();
-        System.out.println(concordance.toString());
+        System.out.println(concordance);
     }
 }

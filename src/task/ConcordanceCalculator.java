@@ -2,9 +2,6 @@ package task;
 
 import java.util.List;
 
-/**
- * Created by zlatkov on 9/26/15.
- */
 public class ConcordanceCalculator {
     private Paragraph paragraph;
 
