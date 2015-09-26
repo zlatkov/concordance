@@ -24,7 +24,7 @@ public class Main {
         }
     }
 
-    private static String readInput(InputStream stream) throws IOException{
+    private static String readInput(InputStream stream) throws IOException {
         InputStreamReader streamReader = new InputStreamReader(stream);
         BufferedReader reader = new BufferedReader(streamReader);
         StringBuilder result = new StringBuilder();
