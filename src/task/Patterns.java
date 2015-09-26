@@ -27,16 +27,6 @@ public final class Patterns {
     }
 
     private static String getAbbreviationPattern(String abbreviation) {
-        StringBuilder result = new StringBuilder();
-        for (char symbol : abbreviation.toCharArray()) {
-            if (symbol == '.') {
-                result.append("\\.");
-            }
-            else {
-                result.append(symbol);
-            }
-        }
-
-        return result.toString();
+        return abbreviation.replaceAll("\\.", "\\\\.");
     }
 }
