@@ -3,6 +3,7 @@ package task;
 import java.util.regex.Pattern;
 
 public final class Patterns {
+
     public static final Pattern ABBREVIATIONS_PATTERN;
 
     // Terminators are ".", "!", "?"  or they can be wrapped ".)", "!]" etc.

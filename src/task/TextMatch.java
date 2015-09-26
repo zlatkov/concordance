@@ -1,6 +1,7 @@
 package task;
 
 public class TextMatch {
+
     private int position;
     private String text;
 

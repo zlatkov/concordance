@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sentence extends TextElement {
+
     private static final String WORDS_SPLIT = "\\s+";
 
     public Sentence(String text) {
@@ -20,8 +21,8 @@ public class Sentence extends TextElement {
                 words.add(word.toLowerCase());
             }
             else {
-                String fixed = removeTrailingDot(word);
-                words.add(fixed.toLowerCase());
+                String validWord = removeTrailingDot(word);
+                words.add(validWord.toLowerCase());
             }
         }
 
