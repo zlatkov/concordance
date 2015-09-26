@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Sentence extends TextElement {
 
-    private static final String WORDS_SPLIT = "\\s+";
+    private static final String WORDS_SPLIT = "\\s+"; // One or more whitespaces.
 
     public Sentence(String text) {
         super(text);
@@ -17,16 +17,16 @@ public class Sentence extends TextElement {
         List<String> words = new ArrayList<>();
 
         for (String part : textParts) {
-            String word = removeInvalidBoundaryCharacters(part);
+            String word = removeInvalidBoundaryCharacters(part).toLowerCase();
 
             if (isAbbreviation(word)) {
-                words.add(word.toLowerCase());
+                words.add(word);
             }
             else {
-                String wordWithoutDot = removeTrailingDots(word);
+                word = removeTrailingDots(word);
 
-                if (isValidWord(wordWithoutDot)) {
-                    words.add(wordWithoutDot.toLowerCase());
+                if (isValidWord(word)) {
+                    words.add(word);
                 }
             }
         }
@@ -35,7 +35,7 @@ public class Sentence extends TextElement {
     }
 
     private static String removeTrailingDots(String word) {
-        return word.replaceAll("\\.+$", "");
+        return word.replaceAll("\\.+$", ""); // One or more dots at the end of the word.
     }
 
     private static String removeInvalidBoundaryCharacters(String word) {

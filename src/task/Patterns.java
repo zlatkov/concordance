@@ -8,7 +8,8 @@ public final class Patterns {
 
     public static final Pattern ABBREVIATIONS_PATTERN;
 
-    // Terminators are ".", "!", "?"  or they can be wrapped ".)", "!]" etc.
+    // Terminators are the characters ".", "!", "?".
+    // They can also be wrapped like ".)", "!]" etc.
     public static final Pattern TERMINATORS_PATTERN = Pattern.compile("[.?!][)}\\]]?");
 
     // Abbreviations are special words such as e.g., i.e., dr.
@@ -27,6 +28,7 @@ public final class Patterns {
     }
 
     private static String getAbbreviationPattern(String abbreviation) {
+        // Every '.' should be replaced with '\.' for a valid Pattern.
         return abbreviation.replaceAll("\\.", "\\\\.");
     }
 }
