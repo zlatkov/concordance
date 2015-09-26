@@ -16,6 +16,7 @@ public class Main {
             ConcordanceCalculator calculator = new ConcordanceCalculator(text);
             Concordance concordance = calculator.calculate();
             ConcordancePresenter presenter = new ConcordancePresenter(concordance);
+
             System.out.println(presenter);
         }
         catch (IOException e) {
