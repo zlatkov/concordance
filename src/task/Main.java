@@ -28,7 +28,6 @@ public class Main {
         StringBuilder result = new StringBuilder();
         String line;
 
-        // Read until EOF
         while ((line = reader.readLine()) != null) {
             result.append(line);
             result.append("\n");
