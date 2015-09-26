@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-    private static final String TERMINATION_WORD = "exit";
-
     public static void main(String[] args) {
         try {
             String text = readInput(System.in);
@@ -30,7 +28,8 @@ public class Main {
         StringBuilder result = new StringBuilder();
         String line;
 
-        while ((line = reader.readLine()) != null && !line.equals(TERMINATION_WORD)) {
+        // Read until EOF
+        while ((line = reader.readLine()) != null) {
             result.append(line);
             result.append("\n");
         }
