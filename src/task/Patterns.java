@@ -1,5 +1,7 @@
 package task;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public final class Patterns {
@@ -13,21 +15,15 @@ public final class Patterns {
     private static final String[] ABBREVIATIONS = new String[] { "e.g.", "mr.", "i.e.", "dr." };
 
     static {
-        StringBuilder abbreviationsPattern = new StringBuilder();
-        int abbreviationsCount = ABBREVIATIONS.length;
+        List<String> abbreviationPatterns = new ArrayList<>();
 
-        for (int i = 0; i < abbreviationsCount; i++) {
-            String abbreviation = ABBREVIATIONS[i];
+        for (String abbreviation : ABBREVIATIONS) {
             String abbreviationPattern = getAbbreviationPattern(abbreviation);
-
-            if (i > 0) {
-                abbreviationsPattern.append("|");
-            }
-
-            abbreviationsPattern.append(abbreviationPattern);
+            abbreviationPatterns.add(abbreviationPattern);
         }
 
-        ABBREVIATIONS_PATTERN = Pattern.compile(abbreviationsPattern.toString());
+        String pattern = Utils.join(abbreviationPatterns, "|");
+        ABBREVIATIONS_PATTERN = Pattern.compile(pattern);
     }
 
     private static String getAbbreviationPattern(String abbreviation) {
