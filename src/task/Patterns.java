@@ -12,7 +12,7 @@ public final class Patterns {
     // They can also be wrapped like ".)", "!]" etc.
     public static final Pattern TERMINATORS_PATTERN = Pattern.compile("[.?!][)}\\]]?");
 
-    private static final String[] ABBREVIATIONS = new String[] { "e.g.", "mr.", "i.e.", "dr." };
+    private static final String[] ABBREVIATIONS = new String[] { "e.g.", "mr.", "i.e.", "dr." , "p.s." };
 
     static {
         List<String> abbreviationPatterns = new ArrayList<>();
