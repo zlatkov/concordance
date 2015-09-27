@@ -13,15 +13,16 @@ public class ConcordanceCalculator {
     public Concordance calculate() {
         Concordance result = new Concordance();
         List<Sentence> sentences = this.paragraph.extractSentences();
-        int sentencesCount = sentences.size();
+        int sentenceIndex = 0;
 
-        for (int sentenceIndex = 0; sentenceIndex < sentencesCount; sentenceIndex++) {
-            Sentence sentence = sentences.get(sentenceIndex);
+        for (Sentence sentence : sentences) {
             List<String> words = sentence.extractWords();
 
             for (String word : words) {
                 result.addWord(word, sentenceIndex);
             }
+
+            sentenceIndex++;
         }
 
         return result;

@@ -20,15 +20,16 @@ public final class Utils {
     }
 
     public static <T> String join(List<T> values, String separator) {
-        int stringCount = values.size();
         StringBuilder result = new StringBuilder();
+        int valueIndex = 0;
 
-        for (int i = 0; i < stringCount; i++) {
-            if (i > 0) {
+        for (T value : values) {
+            if (valueIndex > 0) {
                 result.append(separator);
             }
 
-            result.append(values.get(i).toString());
+            result.append(value);
+            valueIndex++;
         }
 
         return result.toString();
