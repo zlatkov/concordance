@@ -9,13 +9,13 @@ public class Paragraph extends TextElement {
     }
 
     public List<Sentence> extractSentences() {
-        List<TextMatch> possibleLineEndings = Utils.findMatches(this.getText(), Patterns.TERMINATORS_PATTERN);
+        List<TextMatch> possibleSentenceEndings = Utils.findMatches(this.getText(), Patterns.TERMINATORS_PATTERN);
         List<TextMatch> abbreviations = Utils.findMatches(this.getText(), Patterns.ABBREVIATIONS_PATTERN);
 
         int textPosition = 0;
         List<Sentence> sentences = new ArrayList<>();
 
-        for (TextMatch ending : possibleLineEndings) {
+        for (TextMatch ending : possibleSentenceEndings) {
             if (isValidSentenceEnd(ending, abbreviations)) {
                 String sentenceText = this.getText().substring(textPosition, ending.getEnd() + 1);
                 Sentence sentence = new Sentence(sentenceText);
