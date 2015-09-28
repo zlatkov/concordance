@@ -9,10 +9,10 @@ public final class Patterns {
     public static final Pattern ABBREVIATIONS_PATTERN;
 
     // Terminators are the characters ".", "!", "?".
-    // They can also be wrapped like ".)", "!]" etc.
+    // They can also be wrapped ".)", "!]" etc.
     public static final Pattern TERMINATORS_PATTERN = Pattern.compile("[.?!][)}\\]]?");
 
-    private static final String[] ABBREVIATIONS = new String[] { "e.g.", "mr.", "i.e.", "dr." , "p.s." };
+    private static final String[] ABBREVIATIONS = new String[] { "e.g.", "mr.", "i.e.", "dr.", "p.s." };
 
     static {
         List<String> abbreviationPatterns = new ArrayList<>();
