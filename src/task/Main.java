@@ -11,8 +11,8 @@ public class Main {
         try {
             String text = readInput(System.in);
 
-            ConcordanceCalculator calculator = new ConcordanceCalculator(text);
-            Concordance concordance = calculator.calculate();
+            ConcordanceBuilder concordanceBuilder = new ConcordanceBuilder(text);
+            Concordance concordance = concordanceBuilder.build();
             ConcordancePresenter presenter = new ConcordancePresenter(concordance);
 
             System.out.println(presenter);

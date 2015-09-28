@@ -2,15 +2,15 @@ package task;
 
 import java.util.List;
 
-public class ConcordanceCalculator {
+public class ConcordanceBuilder {
 
     private final Paragraph paragraph;
 
-    public ConcordanceCalculator(String text) {
+    public ConcordanceBuilder(String text) {
         this.paragraph = new Paragraph(text);
     }
 
-    public Concordance calculate() {
+    public Concordance build() {
         Concordance result = new Concordance();
         List<Sentence> sentences = this.paragraph.extractSentences();
         int sentenceIndex = 0;
