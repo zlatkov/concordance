@@ -4,15 +4,15 @@ import java.util.List;
 
 public class ConcordanceBuilder {
 
-    private final Paragraph paragraph;
+    private final TextDocument textDocument;
 
     public ConcordanceBuilder(String text) {
-        this.paragraph = new Paragraph(text);
+        this.textDocument = new TextDocument(text);
     }
 
     public Concordance build() {
         Concordance result = new Concordance();
-        List<Sentence> sentences = this.paragraph.extractSentences();
+        List<Sentence> sentences = this.textDocument.extractSentences();
         int sentenceIndex = 0;
 
         for (Sentence sentence : sentences) {

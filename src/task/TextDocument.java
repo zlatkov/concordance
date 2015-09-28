@@ -2,9 +2,9 @@ package task;
 
 import java.util.*;
 
-public class Paragraph extends TextElement {
+public class TextDocument extends TextElement {
 
-    public Paragraph(String text) {
+    public TextDocument(String text) {
         super(text);
     }
 
